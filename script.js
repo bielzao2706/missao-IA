@@ -6,16 +6,38 @@ const textoResultado= document.querySelector(".texto-resultado");
 
 const=perguntas [
     
-    enunciado:"Perguntas 1",
-    alternativas:
-    "Alternativas 1",
-    "Alternativas 2"
-]
-},
+    enunciado:"De onde é a invenção do chuveiro elétrico?",
+    alternativas: 
+    "Brasil",
+    "França"
+    correta: 0
+
+],
+
+
 {
-enunciado: "Perguntas 2",
+    enunciado: "Qual o livro mais vendido no mundo?",
 alternativas: [
-    "Alternativas 1",
-    "Alternativas 2"
+    "Dom Quixote",
+    "O Pequeno Príncipe"
 ]
+    correta: 0
+}
+
+
+let atual = 0
+let perguntaAtual;
+let pontuação = 0
+
+function mostrarPergunta(){
+    perguntaAtual = pergunta[atual]
+    caixaPerguntas.textContent = perguntaAtual.enunciado
+    caixaAlternativas.innerHTML = "";
+
+    perguntaAtualk.alternativas.forEach((alternativas, index) => {
+          const botao = document. createElement("button");
+          botao.addEventListener("click",() => verificaResposta(index));
+          caixaAlternativas.appendChild(botao);
+
+        });
 }
